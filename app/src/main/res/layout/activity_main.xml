@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/LayoutWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingVertical="70dp"
+        android:background="@drawable/moneymeter_wrapper_background">
+
+        <TextView
+            android:id="@+id/maxLimitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/moneyMeterProgressBar"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:text="\u20B9 0"
+            android:textColor="@color/tertiary" />
+
+        <TextView
+            android:id="@+id/minLimitTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\u20B9 0"
+            android:layout_below="@id/moneyMeterProgressBar"
+            android:layout_alignStart="@id/moneyMeterProgressBar"
+            android:textColor="@color/tertiary"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            />
+        <com.example.ninjacartinterview.CustomProgressBar
+            android:id="@+id/moneyMeterProgressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:progressDrawable="@drawable/money_meter_progress_bar" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/LayoutWrapper"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:paddingVertical="30dp"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
